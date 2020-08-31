@@ -1,0 +1,101 @@
+<?php
+session_start();
+?>
+<html>
+    <head>
+        <title>
+            Create Your Own Tales
+        </title>
+        <style>
+            fieldset{
+                padding:3%;
+                text-align: center;
+                border-radius:5px;
+                width:30%;
+                height:70%;
+                border:2px double grey;
+                background-color:rgb(245,245,245,0.7);
+                margin: 10% 0% 5% 35%;
+            }
+            input,select {
+                font-family: Levenim MT;
+                margin:4px;
+                border-radius: 5px;
+                border: 2px groove ;
+            }
+            input[type="submit"]{
+                font-size:35;
+                font-weight: bold;
+                letter-spacing: 1px;
+                padding:3px 10px 3px 5px;
+                margin:10px 0px 0px 100px;
+                font-family: Kunstler Script;
+            }
+            body{
+                font-family:Levenim MT;
+                font-size:15;
+                background-image: url(neww.jpg);
+                background-repeat: no-repeat;
+            }
+            a{
+                text-decoration: none;
+                color:white;
+                
+            }
+            .logo{
+                width:1.5%;
+                height:3%;
+                padding-left: 1%;
+            }
+            
+        </style>
+        
+    
+    </head>
+    <body>
+        
+        <img src="logo.png" class="logo">
+    <a href="Talent%20Tales.html">Home</a>
+        <fieldset>
+            Happy Colouring...
+            Name<br>
+            <input type=text name="uname" size=35 required><br>
+            Password<br>
+            <input type=password name="password" size=35 required><br>
+            Education Qualification<font color=red>*</font><br>
+            <input type="text" name="edu"><br>
+            Company/Educational Institution Name<br>
+            <input type=text name="place" size=35 ><br>
+            Email<br><input type=text name="mail" size=30 required ><br>
+            Phone Number<br>
+            <input type=text name="phone" size=20 maxlength=10 required  >
+            <br>Category<font color=red>*</font><br>
+            <input type="text" name="category"><br>
+            <input type="submit" name="update" value="Update">
+            <?php
+$servername="localhost";
+$username="root";
+$password="";
+$db="talent";
+
+$con=mysqli_connect($servername,$username,$password,$db);
+            if(isset($_POST['update'])){
+            $name=$_POST['uname'];
+$pwd=$_POST['password'];
+$educatn=$_POST['edu'];
+$place=$_POST['place'];
+$email=$_POST['mail'];
+$phn=$_POST['phone'];
+$cat=$_POST['category'];
+$user=$_SESSION['username'];
+            $sql="update artist set Username='$name',Phonenum='$phn', Password='$pwd',Mail='$email',Category='$cat',Institution='$place',Education='$edu' where username='$user'";
+            if(mysqli_query($con,$sql)){
+                echo"Data updated successfully";
+                
+            }
+            
+            }
+            ?>
+        </fieldset>
+    </body>
+</html>

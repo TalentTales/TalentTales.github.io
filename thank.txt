@@ -1,0 +1,120 @@
+<?php
+session_start();
+?>
+    <html>
+    <head>
+        <title>
+            Create Your Own Tales
+        </title>
+        <style>
+            fieldset{
+                padding:3%;
+                text-align: left;
+                border-radius:5px;
+                width:30%;
+                height:70%;
+                border:2px double grey;
+                background-color:rgb(245,245,245,0.7);
+                margin: 10% 0% 5% 35%;
+            }
+            input,select {
+                font-family: Levenim MT;
+                margin:4px;
+                border-radius: 5px;
+                border: 2px groove ;
+            }
+            input[type="submit"]{
+                font-size:35;
+                font-weight: bold;
+                letter-spacing: 1px;
+                padding:3px 10px 3px 5px;
+                margin:10px 0px 0px 100px;
+                font-family: Kunstler Script;
+            }
+            body{
+                font-family:Levenim MT;
+                font-size:15;
+                background-image: url(neww.jpg);
+                background-repeat: no-repeat;
+            }
+            a{
+                text-decoration: none;
+                color:white;
+                
+            }
+            .logo{
+                width:1.5%;
+                height:3%;
+                
+                padding-left: 1%;
+            }
+            
+        </style>
+        
+    </head>
+    <body>
+        
+        <img src="logo.png" class="logo">
+    <a href="Talent%20Tales.html">Home</a>
+  <fieldset>
+            Happy Colouring <?php echo $_POST['uname']; ?> !     
+<?php
+$servername="localhost";
+$username="root";
+$password="";
+$db="talent";
+
+$con=mysqli_connect($servername,$username,$password,$db);
+if (!$con)
+{
+die("Connection failed: " . mysqli_connect_error());
+}
+else {echo "<br>Connected successfully";}
+
+if(isset($_POST['submit'])){
+
+$_SESSION['username']=$_POST['uname'];
+
+$name=$_POST['uname'];
+$pwd=$_POST['password'];
+$educatn=$_POST['edu'];
+$place=$_POST['place'];
+$email=$_POST['mail'];
+$phn=$_POST['phone'];
+$cat=$_POST['category'];
+      $sql="INSERT INTO artist(Username,Password,Education,Institution,Mail,Phone,Category) VALUES('$name','$pwd','$educatn','$place','$email',$phn,'$cat')";
+if(!mysqli_query($con,$sql)){
+
+echo "<br> not inserted into your data base".mysqli_error($Con);
+}
+ echo"<br>Name ".$name;
+    echo"<br>Password ".$pwd;
+    echo"<br>Education ".$educatn;
+    echo"<br>Place ".$place;
+    echo "<br>Mail ".$email;
+    echo"<br>Phone ".$phn;
+    echo"<br>Category ".$cat;
+
+}
+?> 
+             
+   <br> Wanna Make Any Changes?<br><input type="submit" name="update" value="Update">
+    <br><br>View All Participant Details<br><input type="submit" name="view" value="View">
+    <br><img src="logo.png" class="logo">
+    <a href="Talent%20Tales.html" style="color:black;">Home</a>
+            
+        </fieldset>
+        
+        <?php      
+            if(isset($_POST['update'])){
+                header("Location:update.php");
+            }
+
+            if(isset($_POST['view'])){
+                header("Location:view.php");
+            }
+            ?>
+
+    </body>
+</html>
+
