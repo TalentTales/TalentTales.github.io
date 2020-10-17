@@ -3,10 +3,8 @@
 <style>
 .box{           
                 text-align: center;
-                background-color:rgb(245,245,245,0.8);
                 margin-left:auto;
                 margin-right:auto;
-                margin-top:10%;
                 padding-top:5%;
             }
             input{
@@ -16,6 +14,12 @@
                 background-color: transparent;
                 margin:8px;
             }
+    .head{
+            font-family: Kunstler Script;
+            font-size: 90;
+            text-align: justify;
+            
+        }
     .border{
         border-top-color: transparent;
                 border-right-color: transparent;
@@ -25,47 +29,41 @@
     }
     table,tr,td{
         padding:5px;
-        margin-left:auto;
-    margin-right:auto;
-        
+        margin:2%;
+        font-size:18px;
         
     }
             input[type="submit"]{
-                font-size:35;
+                font-size:45;
                 color:white;
                 letter-spacing: 2.5px;
                 padding: 5px;
                 background-color: black;
                 font-family: Kunstler Script;
-                box-shadow: -5px 5px 5px 3px rgba(0,0,0,0.2);
+                box-shadow: -5px 6px 6px 3px rgba(0,0,0,0.5);
                 border-radius: 3px;
+                border: transparent;
                 
             }
     input[type="submit"]:hover{
         transition: 0.5s;
         transform: translateY(-40%);
         cursor: pointer;
+        box-shadow:  -6px 6px 3px rgba(0,0,0,0.5);
     }
-    .right{
-        width:5%;
-        height:inherit;
-        background-color: black;
-        display: inline;
-    }
-    .left{
-        float: left;
-        width:5%;
-        height:inherit;
-        background-color: black;
-        
+    
+    a{
+        text-decoration: none;
+        color:black;
     }
     
     
             body{
                 font-family:Levenim MT;
-                font-size:18px;
+                
                 margin:0;
-                background-repeat: no-repeat;
+                background-image: url(splash.jpg);
+                background-size:cover;
             }
     .logo{
                 width:1.5%;
@@ -103,6 +101,15 @@
      <div class="right"></div>
         <div class="left"></div>
     <div class="box">
+        <div class="head">
+        
+             Talent
+        <br><span style="padding-left: 120px"><font style="color:darkblue;letter-spacing: -15;">T</font>
+        <font style="color:deepskyblue;letter-spacing: -15;">a</font>
+        <font style="color:crimson;letter-spacing: -15;">l</font>
+        <font style="color:yellow;letter-spacing: -15;">e</font>
+            <font style="color:limegreen;letter-spacing: -15;">s</font></span>
+    </div>
        
     <form name="reg" onsubmit="return validate();">
 <table><tr><td>
