@@ -4,41 +4,68 @@
             Create Your Own Tales
         </title>
         <style>
-            fieldset{
-                padding:3%;
-                text-align: left;
-                border-radius:5px;
-                width:30%;
-                height:70%;
-                border:2px double grey;
-                background-color:rgb(245,245,245,0.7);
-                margin: 3% 0% 5% 35%;
+           .box{           
+                text-align: center;
+                background-color:rgba(0,0,0,0.5);
+                margin-left:auto;
+                margin-right:auto;
+                margin-top:2%;
+               width:50%;
+               color: white;
+                padding-top:2%;
             }
-            input,select {
+            
+    table,tr,td{
+        padding:5px;
+        margin-left:auto;
+    margin-right:auto;
+        
+        
+    }
+            input{
                 font-family: Levenim MT;
-                margin:4px;
-                border-radius: 5px;
-                border: 2px groove ;
+                margin:5px;
+                font-size:18px;
+                background-color: transparent;
+                color: white;
             }
             input[type="submit"]{
-                font-size:35;
-                font-weight: bold;
-                letter-spacing: 1px;
-                padding:3px 10px 3px 5px;
-                margin:10px 0px 0px 100px;
+                font-size:40px;
+                padding: 5px;
+                color:black;
+                background-color:gainsboro;
                 font-family: Kunstler Script;
+                box-shadow: -5px 5px 5px 3px rgba(0,0,0,0.2);
+                border-radius: 3px;
+                border-color: transparent;
             }
             body{
                 font-family:Levenim MT;
                 font-size:15;
                 background-image:url(neww.jpg);
                 background-repeat: no-repeat;
+                color: white;
             }
             a{
                 text-decoration: none;
                 color:white;
                 
             }
+             input[type="submit"]:hover{
+        transition: 0.5s;
+        transform: translateY(-40%);
+        cursor: pointer;
+                 color:white;
+                background-color: rgba(0,0,0,0.8);;
+                
+    }
+            .border{
+        border-top-color: transparent;
+                border-right-color: transparent;
+                border-left-color: transparent;
+                border-bottom-color: grey;
+         border-width: 1px;
+    }
             .logo{
                 width:1.5%;
                 height:3%;
@@ -90,31 +117,39 @@
         
         <img src="logo.png" class="logo">
     <a href="Talent%20Tales.html">Home</a>
-        <fieldset>
-            <font face="Kunstler Script" size=15 style="padding-left: 60px">Create Your Tale</font>
+        <div class="box">
+            <table>
+           <tr><td colspan="2" style="text-align: center;"> <font face="Kunstler Script" size=15 >Create Your Tale</font>
+               </td></tr>
+                <tr><td colspan="2" style="text-align: center;"> <hr></td></tr>
             
-            <hr>
-            
+                
             <form name="reg"  onsubmit="return validate();"  >
             
-            Name<br>
-            <input type=text name="uname" size=35 required><br>
-            Password<br>
-            <input type=password name="password" size=35 required><br>
-            Education Qualification<font color=red>*</font><br>
-            <input type="text" name="edu"><br>
-            Company/Educational Institution Name<br>
-            <input type=text name="place" size=35 ><br>
-            Email<br><input type=text name="mail" size=30 required ><br>
-            Phone Number<br>
-            <input type=text name="phone" size=20 maxlength=10 required  >
-            <br>Category<font color=red>*</font><br>
-            <input type="text" name="category"><br>
+                <tr><td>Name</td><td>
+                    <input type=text name="uname" class="border" size=20 required></td></tr>
+             <tr><td>   Password</td><td>
+                 <input type=password name="password" class="border" size=14 required></td></tr>
                 
+            <tr><td>Education Qualification<font color=red>*</font></td>
+                <td><input type="text" class="border" name="edu"></td></tr>
                 
-            <input type="submit" name="submit" value="Ready To Create" />
+            <tr><td>Company/Institution Name</td><td>
+                <input type=text name="place" class="border" size=30 ></td></tr>
+                
+                <tr><td>Email</td><td><input type=text class="border" name="mail" size=30 required ></td></tr>
+                
+                <tr><td>Phone Number</td><td>
+                    <input type=text name="phone" class="border" size=20 maxlength=10 required  ></td></tr>
+                
+            <tr><td>Category<font color=red>*</font></td><td>
+                <input type="text" class="border" name="category"></td></tr>
+            
+                
+                <tr><td colspan="2" style="text-align: center;"><input type="submit" name="submit" value="Ready To Create" /></td></tr>
             </form>
-        </fieldset>
+            </table>
+        </div>
            
     </body>
 </html>
